@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "3ea2d4e0-1b65-4b65-8a66-1eeae9063f81": {
+      "ProjectGuid": "3ea2d4e0-1b65-4b65-8a66-1eeae9063f81",
+      "DisplayName": "Alura.WebAPI.WebApp",
+      "ColorIndex": 0
+    },
+    "8980974a-1b85-4bdb-a1d0-0ccb5f709037": {
+      "ProjectGuid": "8980974a-1b85-4bdb-a1d0-0ccb5f709037",
+      "DisplayName": "Alura.WebAPI.DAL.Livros",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Arquivos Diversos",
+      "ColorIndex": -1
+    },
+    "492c972c-38dd-4c4f-b3c3-c9a62898e406": {
+      "ProjectGuid": "492c972c-38dd-4c4f-b3c3-c9a62898e406",
+      "DisplayName": "Alura.WebAPI.Model",
+      "ColorIndex": 2
+    },
+    "ed01027c-93e5-495f-8c24-0289e72dc8f2": {
+      "ProjectGuid": "ed01027c-93e5-495f-8c24-0289e72dc8f2",
+      "DisplayName": "Alura.WebAPI.DAL.Usuarios",
+      "ColorIndex": 3
+    },
+    "a2359ae4-9ee1-43ed-9407-1c2cf73ea819": {
+      "ProjectGuid": "a2359ae4-9ee1-43ed-9407-1c2cf73ea819",
+      "DisplayName": "Alura.WebAPI.Seguranca",
+      "ColorIndex": 4
+    }
+  },
+  "NextColorIndex": 5
+}

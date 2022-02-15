@@ -1,8 +1,12 @@
-﻿using Alura.ListaLeitura.Modelos;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Alura.ListaLeitura.Modelos;
 using Alura.ListaLeitura.Persistencia;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
+using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace Alura.WebAPI.WebApp.Api
 {
@@ -36,7 +40,7 @@ namespace Alura.WebAPI.WebApp.Api
             return Ok(model.ToApi());
         }
 
-        [HttpGet("/api/capas/{id}")]
+        [HttpGet("{id}/capa")]
         public IActionResult ImagemCapa(int id)
         {
             byte[] img = _repo.All
@@ -57,11 +61,9 @@ namespace Alura.WebAPI.WebApp.Api
             {
                 var livro = model.ToLivro();
                 _repo.Incluir(livro);
-
                 var uri = Url.Action("Recuperar", new { id = livro.Id });
                 return Created(uri, livro); //201
             }
-
             return BadRequest();
         }
 
@@ -81,7 +83,7 @@ namespace Alura.WebAPI.WebApp.Api
                 _repo.Alterar(livro);
                 return Ok(); //200
             }
-            return BadRequest(); //400
+            return BadRequest();
         }
 
         [HttpDelete("{id}")]
@@ -93,8 +95,7 @@ namespace Alura.WebAPI.WebApp.Api
                 return NotFound();
             }
             _repo.Excluir(model);
-            return NoContent(); //204
+            return NoContent(); //203
         }
-
     }
 }

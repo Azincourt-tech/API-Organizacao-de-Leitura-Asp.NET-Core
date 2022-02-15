@@ -1,9 +1,11 @@
-﻿using Alura.ListaLeitura.Modelos;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Alura.ListaLeitura.Modelos;
 using Alura.ListaLeitura.Persistencia;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Linq;
 using Lista = Alura.ListaLeitura.Modelos.ListaLeitura;
 
 namespace Alura.WebAPI.WebApp.Api
@@ -11,11 +13,11 @@ namespace Alura.WebAPI.WebApp.Api
     [Authorize]
     [ApiController]
     [Route("api/[controller]")]
-    public class ListaLeituraController : ControllerBase
+    public class ListasLeituraController : ControllerBase
     {
         private readonly IRepository<Livro> _repo;
 
-        public ListaLeituraController(IRepository<Livro> repository)
+        public ListasLeituraController(IRepository<Livro> repository)
         {
             _repo = repository;
         }
@@ -26,12 +28,11 @@ namespace Alura.WebAPI.WebApp.Api
             {
                 Tipo = tipo.ParaString(),
                 Livros = _repo.All
-                     .Where(l => l.Lista == tipo)
-                     .Select(l => l.ToApi())
-                     .ToList()
+                    .Where(l => l.Lista == tipo)
+                    .Select(l => l.ToApi())
+                    .ToList()
             };
         }
-
 
         [HttpGet]
         public IActionResult TodasListas()
@@ -46,8 +47,6 @@ namespace Alura.WebAPI.WebApp.Api
         [HttpGet("{tipo}")]
         public IActionResult Recuperar(TipoListaLeitura tipo)
         {
-
-
             var lista = CriaLista(tipo);
             return Ok(lista);
         }

@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Alura.WebAPI.WebApp.Api
+namespace Alura.ListaLeitura.Services
 {
     [ApiController]
     [Route("api/[controller]")]

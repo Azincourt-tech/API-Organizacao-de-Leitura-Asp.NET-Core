@@ -42,7 +42,7 @@ namespace Alura.WebAPI.WebApp.Api
                 var livro = model.ToLivro();
                 _repo.Incluir(livro);
 
-                var uri = Url.Action("Recuperar", new {id = livro.Id}); 
+                var uri = Url.Action("Recuperar", new { id = livro.Id });
                 return Created(uri, livro); //201
             }
 

@@ -46,6 +46,8 @@ namespace Alura.WebAPI.WebApp.Api
         [HttpGet("{tipo}")]
         public IActionResult Recuperar(TipoListaLeitura tipo)
         {
+
+
             var lista = CriaLista(tipo);
             return Ok(lista);
         }
